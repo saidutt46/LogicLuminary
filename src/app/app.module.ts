@@ -1,16 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ControlPanelComponent, HomeComponent, NavbarComponent, VisualizerCanvasComponent,
+  VisualizerComponent, VisualizerControlsComponent, VisualizerHouserComponent } from '@components';
+import { AppRoutingModule, UiUxModule } from '@modules';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    VisualizerComponent,
+    NavbarComponent,
+    ControlPanelComponent,
+    VisualizerCanvasComponent,
+    VisualizerControlsComponent,
+    VisualizerHouserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    UiUxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

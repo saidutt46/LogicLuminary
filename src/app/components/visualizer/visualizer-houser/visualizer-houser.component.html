@@ -1,0 +1,4 @@
+<div class="vis-houser-section" fxFlex fxLayout="column" fxLayoutGap="32px" fxLayoutAlign="center center">
+    <app-visualizer-controls (speedUpdated)="updateSpeed($event)" (tilesUpdated)="updateTile($event)"></app-visualizer-controls>
+    <app-visualizer-canvas [tileData]="tileData" [speedData]="speedData"></app-visualizer-canvas>
+</div>

@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$Blue: #193549;
+$Blue-Highlight: #1F4662;
+$Blue-Highlight-Two: #234E6D;
+$Blue-Dark: #122738;
+$Yellow: #ffc600;
+$Hot-Pink: #ff0088;
+$Blush-Pink: #ff628c;
+$Orange: #ff9d00;
+
+
+.header-toolbar {
+  height: 32px !important;
+  max-height: 32px !important;
+  background-color: $Blue;
+}
+
+.editor-layout {
+  // .header-navbar {
+  //     // some random stuff laer will be added
+  // }
+
+  .main-container {
+    width: 100%;
+    height: calc(100vh - 32px) !important;
+    max-height: calc(100vh - 32px) !important;
+    background-color: $Blue-Highlight-Two !important;
+  }
+
+}
+
+.control-panel-container {
+  width: 400px !important;
+  background-color: $Blue;
+  height: calc(100vh - 32px) !important;
+  max-height: calc(100vh - 32px) !important;
+
+  .control-panel-lhs {
+    width: 60px;
+    background-color: $Blue;
+  }
+
+  .control-panel-rhs {
+    width: 100%;
+    background-color: $Blue-Dark;
+  }
+}
+
+.menu-tree {
+  background: none !important;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+  color: whitesmoke !important;
+}
+
+
+::ng-deep .custom-tab-class1 {
+  padding: 16px;
+  color: whitesmoke !important;
+}

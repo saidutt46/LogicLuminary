@@ -1,0 +1,39 @@
+<div class="control-panel-container" fxFlex fxLayout="row">
+  <div class="control-panel-lhs" fxLayout="column" fxLayoutAlign="space-between center">
+    <div fxFlex fxLayout="column" fxLayoutGap="16px">
+      <button mat-icon-button aria-label="Change Algorithm settings">
+        <mat-icon class="control-panel-lhs-icons active">format_list_bulleted</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Change Algorithm settings">
+        <mat-icon class="control-panel-lhs-icons">mediation</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Change Algorithm settings">
+        <mat-icon class="control-panel-lhs-icons">print</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="Change Algorithm settings">
+        <mat-icon class="control-panel-lhs-icons">contact_mail</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="control-panel-rhs">
+    <mat-tree #tree class="menu-tree" [dataSource]="dataSource" [treeControl]="treeControl">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <!-- use a disabled button to provide padding for tree leaf -->
+        <button mat-icon-button disabled></button>
+        <span class="menu-item" (click)="onMenuItemClick(node)">
+            {{ node.name }}
+        </span>
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        <span>{{ node.name }}{{node.level}}</span>
+      </mat-tree-node>
+    </mat-tree>
+  </div>
+</div>

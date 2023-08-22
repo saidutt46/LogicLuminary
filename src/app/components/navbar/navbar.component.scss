@@ -1,0 +1,50 @@
+@use '@angular/material'as mat;
+
+$my-palette: mat.define-palette(mat.$light-green-palette);
+
+.dot-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.settings-icon {
+    font-size: 18px;
+    height: 18px;
+    width: 18px;
+    margin: 0px;
+    padding: 0px;
+    color: whitesmoke;
+//   -webkit-animation: glowing 1300ms infinite;
+//   -moz-animation: glowing 1300ms infinite;
+//   -o-animation: glowing 1300ms infinite;
+//   animation: glowing 1300ms infinite;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    color: #f1f8e9;
+  }
+
+  50% {
+    color: #76ff03;
+  }
+
+  100% {
+    color: #f1f8e9;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    color: #f1f8e9;
+  }
+
+  50% {
+    color: #76ff03;
+  }
+
+  100% {
+    color: #f1f8e9;
+  }
+}

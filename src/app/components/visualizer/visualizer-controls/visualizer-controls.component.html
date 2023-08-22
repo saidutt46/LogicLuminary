@@ -1,0 +1,33 @@
+<mat-card class="custom-controls-card" fxFlex fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+  <div *ngIf="!isShowing" class="loading-container" fxFlex fxLayoutAlign="center center">
+    <mat-progress-spinner color="primary" mode="indeterminate"></mat-progress-spinner>
+  </div>
+  <div *ngIf="isShowing">
+    <div>
+      <form fxFlex fxLayout="row" fxLayoutGap="16px" [formGroup]="sliderForm">
+        <div class="slider-container" fxFlex fxLayout="column">
+            <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+              <label id="slider-label" class="slider-label">Tiles</label>
+              <label class="slider-value-label">{{tileSlider.value}}</label>
+            </div>
+            <mat-slider class="example-margin" [disabled]="disabled" [max]="tileMax" [min]="tileMin" [step]="step"
+              [discrete]="thumbLabel" [showTickMarks]="showTicks">
+              <input formControlName="tileSlider" matSliderThumb [(ngModel)]="tileValue" #tileSlider>
+            </mat-slider>
+        </div>
+        <div class="slider-container" fxFlex fxLayout="column">
+            <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+              <label id="slider-label" class="slider-label">Speed</label>
+              <label class="slider-value-label">{{speedSlider.value}}</label>
+            </div>
+            <mat-slider class="example-margin" [disabled]="disabled" [max]="speedMax" [min]="speedMin" [step]="step"
+              [discrete]="thumbLabel" [showTickMarks]="showTicks">
+              <input formControlName="speedSlider" matSliderThumb [(ngModel)]="speedValue" #speedSlider>
+            </mat-slider>
+        </div>
+      </form>
+    </div>
+</div>
+<button mat-raised-button color="primary">START</button>
+
+</mat-card>
