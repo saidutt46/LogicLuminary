@@ -6,28 +6,32 @@
     <div>
       <form fxFlex fxLayout="row" fxLayoutGap="16px" [formGroup]="sliderForm">
         <div class="slider-container" fxFlex fxLayout="column">
-            <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
-              <label id="slider-label" class="slider-label">Tiles</label>
-              <label class="slider-value-label">{{tileSlider.value}}</label>
-            </div>
-            <mat-slider class="example-margin" [disabled]="disabled" [max]="tileMax" [min]="tileMin" [step]="step"
-              [discrete]="thumbLabel" [showTickMarks]="showTicks">
-              <input formControlName="tileSlider" matSliderThumb [(ngModel)]="tileValue" #tileSlider>
-            </mat-slider>
+          <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+            <label id="slider-label" class="slider-label">Tiles</label>
+            <label class="slider-value-label">{{tileSlider.value}}</label>
+          </div>
+          <mat-slider class="example-margin" [disabled]="disabled" [max]="tileMax" [min]="tileMin" [step]="step"
+            [discrete]="thumbLabel" [showTickMarks]="showTicks">
+            <input formControlName="tileSlider" matSliderThumb [(ngModel)]="tileValue" #tileSlider>
+          </mat-slider>
         </div>
         <div class="slider-container" fxFlex fxLayout="column">
-            <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
-              <label id="slider-label" class="slider-label">Speed</label>
-              <label class="slider-value-label">{{speedSlider.value}}</label>
-            </div>
-            <mat-slider class="example-margin" [disabled]="disabled" [max]="speedMax" [min]="speedMin" [step]="step"
-              [discrete]="thumbLabel" [showTickMarks]="showTicks">
-              <input formControlName="speedSlider" matSliderThumb [(ngModel)]="speedValue" #speedSlider>
-            </mat-slider>
+          <div class="slider-label-container" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+            <label id="slider-label" class="slider-label">Speed</label>
+            <label class="slider-value-label">{{speedSlider.value}}</label>
+          </div>
+          <mat-slider class="example-margin" [disabled]="disabled" [max]="speedMax" [min]="speedMin" [step]="step"
+            [discrete]="thumbLabel" [showTickMarks]="showTicks">
+            <input formControlName="speedSlider" matSliderThumb [(ngModel)]="speedValue" #speedSlider>
+          </mat-slider>
         </div>
       </form>
     </div>
-</div>
-<button mat-raised-button color="primary">START</button>
+  </div>
+  <div class="button-section" fxFlex fxLayoutGap="8px" fxLayoutAlign="end center">
+    <button mat-raised-button color="primary" (click)="startExecution()">START</button>
+    <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+    <button mat-raised-button color="warn" (click)="stopExecution()">Stop</button>
+  </div>
 
 </mat-card>

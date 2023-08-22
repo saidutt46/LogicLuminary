@@ -10,22 +10,24 @@ import { debounceTime } from 'rxjs';
 export class VisualizerControlsComponent implements OnInit {
   isShowing: boolean = false;
   disabled = false;
-  tileMax = 100;
+  tileMax = 75;
   tileMin = 10;
-  speedMax = 100;
-  speedMin = 10;
+  speedMax = 500;
+  speedMin = 100;
   showTicks = false;
   step = 1;
   thumbLabel = false;
-  tileValue = 50;
-  speedValue = 50;
-  value = 50;
+  tileValue = 20;
+  speedValue = 200;
   sliderForm: FormGroup = this.fb.group({
-    tileSlider: [50],
-    speedSlider: [50, [Validators.min(10), Validators.max(100)]],
+    tileSlider: [20, Validators.max(75)],
+    speedSlider: [200, [Validators.min(100), Validators.max(500)]],
   });
   @Output() tilesUpdated: EventEmitter<number> = new EventEmitter<number>();
   @Output() speedUpdated: EventEmitter<number> = new EventEmitter<number>();
+  @Output() start: EventEmitter<any> = new EventEmitter<any>();
+  @Output() refreshCanvas: EventEmitter<any> = new EventEmitter<any>();
+  @Output() stop: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private fb: FormBuilder) { }
 
@@ -41,6 +43,18 @@ export class VisualizerControlsComponent implements OnInit {
         this.speedUpdated.emit(value);
       });
     }
+  }
+
+  startExecution() {
+    this.start.emit();
+  }
+
+  refresh() {
+    this.refreshCanvas.emit();
+  }
+
+  stopExecution() {
+    this.stop.emit();
   }
 
 }

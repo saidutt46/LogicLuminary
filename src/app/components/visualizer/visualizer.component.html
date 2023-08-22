@@ -3,11 +3,11 @@
     <ng-template mat-tab-label>
       <div class="custom-tab-header-label-section" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
         <span class="tab-label-final">{{tab.name}}</span>
-        <button *ngIf="tab.name !== 'Welcome Page'" class="close-button" (click)="closeTab(index);$event.stopPropagation()" mat-icon-button aria-label="Close Tab">
+        <button *ngIf="tab.algId !== 0" class="close-button" (click)="closeTab(index);$event.stopPropagation()" mat-icon-button aria-label="Close Tab">
           <mat-icon class="close-icon">close</mat-icon>
         </button>
       </div>
     </ng-template>
-    <app-visualizer-houser [tabData]="selectedTabLocal"></app-visualizer-houser>
+    <app-visualizer-houser [tabData]="tab"></app-visualizer-houser>
   </mat-tab>
 </mat-tab-group>

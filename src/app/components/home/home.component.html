@@ -1,7 +1,7 @@
 <div class="editor-layout" fxFlex fxLayout="column">
     <app-navbar (controlPanelToggle)="togglePanel()" class="header-navbar"></app-navbar>
     <mat-drawer-container class="main-container" [hasBackdrop]="false">
-        <mat-drawer [position]="'start'" [opened]="isShowing" class="side-nav" #drawer [mode]="'side'">
+        <mat-drawer [position]="'start'" [opened]="true" class="side-nav" #drawer [mode]="'side'">
           <app-control-panel (tabData)="newTabAdded($event)"></app-control-panel>
         </mat-drawer>
         <mat-drawer-content class="hero-content-section">

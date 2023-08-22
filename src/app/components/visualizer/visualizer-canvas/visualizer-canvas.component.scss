@@ -1,0 +1,52 @@
+.canvas-tile-container {
+  width: 1200px;
+  height: 600px;
+  background-color: #122738;
+}
+
+.tile-class-default {
+  width: 12px;
+  min-height: 20px;
+  /* Adjust the value as needed */
+  background-color: #234E6D;
+  /* Just for illustration */
+  color: #ff628c;
+  margin: 2px !important;
+  font-size: 10px;
+}
+
+.bar.current {
+  /* Style for currently handled element */
+  background-color: #ff9800;
+  /* Orange */
+}
+
+.bar.completed {
+  /* Style for completed elements */
+  background-color: #4caf50;
+  /* Green */
+}
+
+.welcome-tab {
+  width: 100%;
+  height: 100%;
+  background-color: #122738;
+  padding: 16px;
+
+  .welcome-hero-text-heading {
+    color: whitesmoke;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  .welcome-hero-text-oneliner {
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .features-list {
+    background: none !important;
+    color: whitesmoke !important;
+  }
+}
