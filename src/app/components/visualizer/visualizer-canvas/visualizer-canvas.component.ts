@@ -12,8 +12,6 @@ export class VisualizerCanvasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('final section');
-    console.log(this.tileData, this.speedData);
   }
 
 }

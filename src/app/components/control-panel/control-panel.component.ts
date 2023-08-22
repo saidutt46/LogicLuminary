@@ -1,7 +1,7 @@
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { MatTree, MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { SortingAlgorithm } from '@models';
+import { SortingAlgorithm, VisualizerTabModel } from '@models';
 import { GlobalWorkerService, SortingAlgorithmService } from '@services';
 
 /** Flat node with expandable and level information */
@@ -23,6 +23,7 @@ export class ControlPanelComponent implements OnInit, AfterViewInit {
   sortingAlgorithmTreeData!: SortingAlgorithm;
   menuData: SortingAlgorithm[] = [];
   @ViewChild('tree') tree!: MatTree<MenuFlatNode>;
+  @Output() tabData: EventEmitter<VisualizerTabModel> = new EventEmitter<VisualizerTabModel>();
   constructor(private algService: SortingAlgorithmService,
     private gwService: GlobalWorkerService) { }
 
@@ -72,7 +73,8 @@ export class ControlPanelComponent implements OnInit, AfterViewInit {
     
     // Activate the clicked item
     item.active = true;
-    this.gwService.generateNewTabConfig(item.id);
+    const tabConfig = this.gwService.generateNewTabConfig(item.id);
+    this.tabData.emit(tabConfig);
   }
 
   // Function to deactivate all items

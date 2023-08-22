@@ -7,12 +7,12 @@ export class VisualizerTabModel {
     algId?: number;
 }
 
-export const DefaultTabConfig: VisualizerTabModel[] = [
-    {
-        name: 'Welcome Page',
-        id: 0,
-        active: true,
-        type: 'www-page',
-        algId: 0
-    }
-];
+const welcomeTabConfig = new VisualizerTabModel();
+welcomeTabConfig.name = 'Welcome';
+welcomeTabConfig.algName = 'Welcome';
+welcomeTabConfig.id = 0;
+welcomeTabConfig.active = true;
+welcomeTabConfig.type = 'welcome';
+welcomeTabConfig.algId = 0;
+
+export const DefaultTabConfig: VisualizerTabModel[] = [welcomeTabConfig];

@@ -13,7 +13,7 @@ export class GlobalWorkerService {
     return of(DefaultTabConfig);
   }
 
-  generateNewTabConfig(id: number) {
+  generateNewTabConfig(id: number): VisualizerTabModel {
     const model = new VisualizerTabModel();
     const algortithmData = SORT_ALG_DATA.find(x => x.id === id);
     model.name = algortithmData?.tabName;
@@ -30,13 +30,14 @@ export class GlobalWorkerService {
         x.active = false;
       }
     });
-    console.warn(model);
+    // console.warn(model);
+    return model;
 
-    const exists = DefaultTabConfig.some(x => x.algId === id);
-    console.warn(exists);
-    if (!exists) {
-      DefaultTabConfig.push(model);
-    }
-    console.warn(DefaultTabConfig);
+    // const exists = DefaultTabConfig.some(x => x.algId === id);
+    // console.warn(exists);
+    // if (!exists) {
+    //   DefaultTabConfig.push(model);
+    // }
+    // console.warn(DefaultTabConfig);
   }
 }
